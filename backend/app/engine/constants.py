@@ -1,7 +1,7 @@
 """Time constants.
 
-Recovered from the AWS Pricing Calculator's own constants table (see study.md,
-section "What the calculator's bundle told us"):
+Recovered from the AWS Pricing Calculator's own constants table (found by reading the
+bundle the calculator serves to browsers):
 
     HOURS_IN_DAY 24, HOURS_IN_MONTH 730, TOTAL_MONTHS 12,
     AVG_WEEKS_IN_MONTH 4.345238095238095, HOURS_PER_WEEK 168

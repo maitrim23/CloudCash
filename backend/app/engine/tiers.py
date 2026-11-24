@@ -1,6 +1,6 @@
 """Tiered ("graduated") pricing.
 
-Port of the calculator's ``tieredPricingMath`` command (see study.md). The
+Port of the calculator's ``tieredPricingMath`` command (read from the bundle the calculator serves to browsers). The
 original walks the tiers in order:
 
     tier 0:                 used = clamp(min(end - start, qty), 0, ...)

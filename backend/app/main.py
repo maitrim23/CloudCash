@@ -1,6 +1,6 @@
 """FastAPI application.
 
-Request flow (see study.md):
+Request flow:
     browser -> /api/estimate -> routes -> engine.estimate.calculate
             -> engine.calculators.calc_* -> pricing.store (SQLite) -> Decimal maths -> JSON
 """

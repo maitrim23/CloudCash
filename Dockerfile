@@ -1,5 +1,5 @@
 # One image = API + built UI + a price database baked in at build time.
-#   docker build -t costgoblin .      (needs backend/data/prices.db; see "Building the price DB" in study.md)
+#   docker build -t costgoblin .      (needs backend/data/prices.db: run `python -m app.pricing.ingest --regions ap-south-1 --download` in backend/ first)
 #   docker run -p 8000:8000 -v costgoblin-data:/data costgoblin
 
 # ---- 1. build the React app ------------------------------------------------

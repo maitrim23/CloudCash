@@ -5,7 +5,7 @@ services:
     name: costgoblin
     runtime: image
     image:
-      url: ghcr.io/maitrim23/costgoblin:latest   # package must be PUBLIC (see study.md section 9)
+      url: ghcr.io/maitrim23/costgoblin:latest   # package must be PUBLIC (GitHub profile -> Packages -> costgoblin -> Package settings -> Change visibility)
     plan: free
     healthCheckPath: /api/health
     envVars:
