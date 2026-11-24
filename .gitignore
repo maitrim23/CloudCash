@@ -1,0 +1,16 @@
+# Python
+backend/.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+# Big downloaded AWS price files and generated databases (rebuild with the ingest script)
+backend/data/offers/
+backend/data/*.db
+# Node
+frontend/node_modules/
+frontend/dist/
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+crude_plan.txt

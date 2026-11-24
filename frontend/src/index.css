@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  --color-ink: #16202c;
+  --color-navy: #1b2838;
+  --color-navy-2: #26384d;
+  --color-accent: #f59e0b;
+  --color-accent-dark: #b45309;
+  --color-line: #d7dde5;
+  --color-surface: #f4f6f9;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+input,
+select,
+button {
+  font: inherit;
+}

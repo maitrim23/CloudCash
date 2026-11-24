@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    ports: ["8000:8000"]
+    volumes: ["scenarios:/data"]
+    environment:
+      COOKIE_SECURE: "0"   # set to "1" once served over HTTPS
+volumes:
+  scenarios:

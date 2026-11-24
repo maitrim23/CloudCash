@@ -1,0 +1,33 @@
+# Manually builds the price database from AWS's public files, bakes it into the image and
+# publishes it to GitHub Container Registry. Run from the Actions tab ("Run workflow").
+name: build-image
+on:
+  workflow_dispatch:
+    inputs:
+      regions:
+        description: "Space-separated AWS region codes to include"
+        default: "ap-south-1 us-east-1"
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Build price database (downloads ~1 GB of AWS price lists, keeps ~100 MB)
+        working-directory: backend
+        run: |
+          pip install -r requirements.txt
+          python -m app.pricing.ingest --regions ${{ inputs.regions }} --download
+      - uses: docker/login-action@v3
+        with: { registry: ghcr.io, username: "${{ github.actor }}", password: "${{ secrets.GITHUB_TOKEN }}" }
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/costgoblin:latest
