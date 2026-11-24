@@ -20,6 +20,7 @@ npm install ; npm run dev                                         # http://local
 ```
 
 One process, production style: `npm run build` in `frontend/`, then run the uvicorn command above and open http://127.0.0.1:8000 (the API serves the built UI).
+AWS: [deploy/aws/](deploy/aws/) (one EC2 instance + HTTPS, about $14/month, untested). Render: `render.yaml`.
 Docker: `docker compose up --build` (needs a built `backend/data/prices.db`; see study.md §9).
 
 Tests: `python -m pytest -q` (backend, 103) · `npm test` (frontend, 16) · CI in `.github/workflows/ci.yml`.
