@@ -3,7 +3,7 @@
 #   docker run -p 8000:8000 -v costgoblin-data:/data costgoblin
 
 # ---- 1. build the React app ------------------------------------------------
-FROM node:22-alpine AS ui
+FROM node:22-slim AS ui
 WORKDIR /ui
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm ci

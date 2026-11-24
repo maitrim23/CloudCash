@@ -1,0 +1,13 @@
+# Render Blueprint: deploys the prebuilt image published by .github/workflows/build-image.yml.
+# The image already contains the app, the built UI and the price database, so Render only runs it.
+services:
+  - type: web
+    name: costgoblin
+    runtime: image
+    image:
+      url: ghcr.io/maitrim23/costgoblin:latest   # package must be PUBLIC (see study.md section 9)
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: COOKIE_SECURE     # Render serves HTTPS, so mark the session cookie Secure
+        value: "1"
